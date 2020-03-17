@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/screens/home_screen.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    ThemeData.dark();
-    return MaterialApp(
+void main() {
+  runApp(
+    MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(brightness: Brightness.dark),
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
-    );
-  }
+    ),
+  );
 }
 
 // class MyHomePage extends StatefulWidget {
