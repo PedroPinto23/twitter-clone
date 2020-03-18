@@ -10,17 +10,18 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  @override
-  void initState() {
-    super.initState();
+  int _num = 0;
+  // @override
+  // void initState() {
+  //   super.initState();
 
-    AnimatedContainer(
-      duration: Duration(seconds: 5),
-      child: Image.asset(
-        'loading.jpg',
-      ),
-    );
-  }
+  //   AnimatedContainer(
+  //     duration: Duration(seconds: 5),
+  //     child: Image.asset(
+  //       'loading.jpg',
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Icon(
           EvaIcons.twitter,
-          size: 35,
+          size: 30,
           color: Colors.blue,
         ),
         leading: IconButton(
@@ -49,6 +50,45 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       drawer: Drawer(
         child: DrawerPage(),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              size: 32,
+            ),
+            title: Text(''),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+              size: 32,
+            ),
+            title: Text(''),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.notifications,
+              size: 32,
+            ),
+            title: Text(''),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.local_post_office,
+              size: 32,
+            ),
+            title: Text(''),
+          ),
+        ],
+        currentIndex: _num,
+        selectedItemColor: Colors.blue,
+        onTap: (n) {
+          setState(() {
+            _num = n;
+          });
+        },
       ),
       body: Container(
         margin: EdgeInsets.all(8),
